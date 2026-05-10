@@ -1,0 +1,51 @@
+{
+  "name": "fastify-ddd-boilerplate",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file=.env src/main.ts",
+    "build": "tsc --project tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+    "start": "node dist/main.js",
+    "lint": "biome check --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "db:generate": "drizzle-kit generate --config src/infrastructure/database/drizzle.config.ts",
+    "db:migrate": "drizzle-kit migrate --config src/infrastructure/database/drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config src/infrastructure/database/drizzle.config.ts",
+    "db:push": "drizzle-kit push --config src/infrastructure/database/drizzle.config.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "latest",
+    "@fastify/cors": "latest",
+    "@fastify/helmet": "latest",
+    "@fastify/jwt": "latest",
+    "@fastify/rate-limit": "latest",
+    "@fastify/redis": "latest",
+    "@fastify/swagger": "latest",
+    "@fastify/swagger-ui": "latest",
+    "argon2": "latest",
+    "drizzle-orm": "latest",
+    "fastify": "latest",
+    "fastify-plugin": "latest",
+    "ioredis": "latest",
+    "node-cron": "latest",
+    "pino-pretty": "latest",
+    "postgres": "latest",
+    "uuid": "latest",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "latest",
+    "@types/node": "latest",
+    "@types/node-cron": "latest",
+    "@types/uuid": "latest",
+    "@vitest/coverage-v8": "latest",
+    "drizzle-kit": "latest",
+    "tsc-alias": "^1.8.17",
+    "tsx": "latest",
+    "typescript": "latest",
+    "vitest": "latest"
+  }
+}
